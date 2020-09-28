@@ -1,0 +1,441 @@
+{
+	"info": {
+		"_postman_id": "3765de62-ab96-4e92-ad4a-df36c46ce76f",
+		"name": "GPS PPD BACKEND",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST - localhost:8080/subs/add",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2b9a0357-58b8-438d-bd02-16872c5bce5b",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "872bf480-4168-4e0c-852a-b0044b1231bd",
+						"exec": [
+							"pm.test(\"Status code is 202\", function () { pm.response.to.have.status(202); });",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test@test.com\",\n    \"firstname\": \"test\",\n    \"lastname\": \"test\",\n    \"phoneNumber\": \"0649174949\",\n    \"password\": \"test\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/subs/add?",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subs",
+						"add"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "test@test.com",
+							"disabled": true
+						},
+						{
+							"key": "firstname",
+							"value": "test",
+							"disabled": true
+						},
+						{
+							"key": "lastname",
+							"value": "test",
+							"disabled": true
+						},
+						{
+							"key": "phoneNumber",
+							"value": "06789097872",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - localhost:8080/login/all",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5594965d-3277-4fa6-9807-4e3bac665891",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/subs/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subs",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - localhost:8080/login/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "91f782fd-e493-4268-ba26-07ff7de44cf4",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test@test.com\",\n    \"firstname\": \"test\",\n    \"lastname\": \"test\",\n    \"phoneNumber\": \"0649174949\",\n    \"password\": \"test\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/login/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT - localhost:8080/login/edit",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "95d4c0e9-f536-41c5-868e-ee7c1ae99900",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 1,\n    \"email\": \"test@test.com\",\n    \"firstname\": \"testUpdate\",\n    \"lastname\": \"testUpdate\",\n    \"phoneNumber\": \"0649174949\",\n    \"password\": \"test\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/login/edit",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE - localhost:8080/login/del",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d0ad0834-9937-4a30-a010-843bf2cbbb18",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/login/del?id=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login",
+						"del"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - localhost:8080/veh/add",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e51d5af7-99ca-4cb5-bb73-c35918ceb525",
+						"exec": [
+							"pm.test(\"Status code is 202\", function () { pm.response.to.have.status(202); });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"plateNumber\": \"test\",\n\t\"location\": \"12345678\",\n\t\"petroleState\": \"TEST\",\n\t\"speed\": \"24\",\n\t\"carState\": \"arret\",\n\t\"carMileage\": \"87654\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/veh/add?",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"veh",
+						"add"
+					],
+					"query": [
+						{
+							"key": "plateNumber",
+							"value": "test",
+							"disabled": true
+						},
+						{
+							"key": "location",
+							"value": "12345678",
+							"disabled": true
+						},
+						{
+							"key": "petroleState",
+							"value": "TEST",
+							"disabled": true
+						},
+						{
+							"key": "speed",
+							"value": "24",
+							"disabled": true
+						},
+						{
+							"key": "carState",
+							"value": "arret",
+							"disabled": true
+						},
+						{
+							"key": "carMileage",
+							"value": "87654",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - localhost:8080/veh/all",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fd2118a7-dcb0-47f9-8635-1e420246fa89",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/veh/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"veh",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT - localhost:8080/veh/edit",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9ec2d5f4-b801-4b9e-9f6e-3d8233fc60ac",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 3,\n\t\"plateNumber\": \"test\",\n\t\"location\": \"12345678\",\n\t\"petroleState\": \"TESTupdate\",\n\t\"speed\": \"24\",\n\t\"carState\": \"arret\",\n\t\"carMileage\": \"87654\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/veh/edit",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"veh",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE - localhost:8080/veh/del",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "57be61be-3ac9-4736-8e7c-82b56ecd4d24",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/veh/del?id=3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"veh",
+						"del"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
